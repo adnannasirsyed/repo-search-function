@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  searchgateway:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.11
+      CodeUri: s3://artifacts-bucket-915028409560/b64d0e2a3330b50145cdb026a9c01439
+      Description: ''
+      MemorySize: 128
+      Timeout: 300
+      Environment:
+        Variables:
+          region: us-east-1
+          host: https://search-search-engine-9150-4ej5lebzrnpphg5liothqgpoqm.us-east-1.es.amazonaws.com
