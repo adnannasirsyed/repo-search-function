@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  searchgateway:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 300
+      # Role: 'arn:aws:iam::844028273225:role/lambda_s3'
+      Environment:
+      	Variables:
+        	region: us-east-1       
+          	host: 'https://search-search-engine-9150-4ej5lebzrnpphg5liothqgpoqm.us-east-1.es.amazonaws.com' # <--- PASTE YOUR OPENSEARCH URL HERE
